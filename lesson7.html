@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leçon 7. Création de fournisseurs | Gestion géographique des fournisseurs avec cartes et coordonnées</title>
+
+<meta name="description" content="Apprenez à créer des fournisseurs dans le système ERP en utilisant des cartes géographiques et le stockage de coordonnées. Découvrez l’importance de la géolocalisation des fournisseurs, l’analyse logistique, la planification des itinéraires, l’optimisation des achats, l’intelligence d’affaires et les bases de données géographiques des fournisseurs.">
+
+<meta name="keywords" content="logiciel gestion fournisseurs, coordonnées fournisseurs carte, ERP fournisseurs, géolocalisation fournisseurs, base de données fournisseurs géographique, système gestion achats, logistique fournisseurs, optimisation routes fournisseurs, logiciel ERP inventaire, analyse fournisseurs">
+
+<style>
+
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+        line-height:1.8;
+    }
+
+    .container{
+        width:90%;
+        max-width:1150px;
+        margin:40px auto;
+        background:#111827;
+        padding:50px;
+        border-radius:18px;
+        box-shadow:0 0 25px rgba(0,0,0,0.4);
+    }
+
+    h1{
+        font-size:2.3rem;
+        margin-bottom:30px;
+        color:#60a5fa;
+        line-height:1.4;
+        text-align:center;
+    }
+
+    h2{
+        color:#93c5fd;
+        margin-top:45px;
+        margin-bottom:20px;
+        font-size:1.6rem;
+    }
+
+    p{
+        font-size:1.08rem;
+        line-height:1.9;
+        color:#d1d5db;
+        margin-bottom:22px;
+    }
+
+    ul{
+        color:#d1d5db;
+        padding-left:25px;
+    }
+
+    li{
+        margin-bottom:14px;
+    }
+
+    .highlight{
+        color:#93c5fd;
+        font-weight:bold;
+    }
+
+    .intro-box{
+        background:#1e293b;
+        border-left:5px solid #60a5fa;
+        padding:25px;
+        border-radius:12px;
+        margin-bottom:35px;
+    }
+
+    .section{
+        margin-top:50px;
+        padding-top:25px;
+        border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .button{
+        display:inline-block;
+        margin:10px;
+        padding:14px 26px;
+        background:#2563eb;
+        color:white;
+        text-decoration:none;
+        border-radius:10px;
+        font-size:1rem;
+        transition:0.3s;
+    }
+
+    .button:hover{
+        background:#1d4ed8;
+        transform:translateY(-2px);
+    }
+
+    .button-green{
+        background:#059669;
+    }
+
+    .button-green:hover{
+        background:#047857;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        Leçon 7. Création de fournisseurs
+    </h1>
+
+    <div class="intro-box">
+
+        <p>
+            Dans cette leçon, vous allez apprendre à créer et gérer des 
+            <span class="highlight">fournisseurs</span> 
+            dans le système ERP en utilisant des fonctionnalités avancées d’intégration géographique.
+        </p>
+
+        <p>
+            L’une des capacités les plus puissantes du logiciel est que les fournisseurs sont créés directement sur la carte et leurs coordonnées géographiques sont stockées de manière permanente dans la base de données.
+        </p>
+
+        <p>
+            Cela transforme la gestion traditionnelle des fournisseurs en un système opérationnel, géographique et analytique beaucoup plus avancé.
+        </p>
+
+    </div>
+
+    <h2>
+        Création de fournisseurs avec coordonnées géographiques
+    </h2>
+
+    <p>
+        Lors de la création d’un fournisseur, l’utilisateur peut le positionner visuellement sur la carte.
+    </p>
+
+    <p>
+        Le système stocke l’emplacement du fournisseur sous forme de coordonnées géographiques (latitude et longitude) directement dans la base de données SQL Server.
+    </p>
+
+    <p>
+        Cela signifie que les fournisseurs ne sont plus de simples enregistrements textuels avec une adresse.
+    </p>
+
+    <p>
+        Ils deviennent des entités géographiques intelligentes pouvant être utilisées pour l’analyse opérationnelle, la logistique, la planification des itinéraires, la gestion territoriale et l’intelligence d’affaires.
+    </p>
+
+    <h2>
+        Importance des informations géographiques des fournisseurs
+    </h2>
+
+    <p>
+        La plupart des systèmes ERP traditionnels stockent uniquement le nom, le téléphone et l’adresse des fournisseurs.
+    </p>
+
+    <p>
+        Cependant, les coordonnées géographiques offrent un niveau d’intelligence opérationnelle beaucoup plus avancé.
+    </p>
+
+    <p>
+        Une fois les fournisseurs liés à une position sur la carte, l’analyse devient spatiale plutôt que purement tabulaire.
+    </p>
+
+    <p>
+        Les données géographiques deviennent un atout stratégique car la localisation influence directement :
+    </p>
+
+    <ul>
+        <li>Les coûts de transport</li>
+        <li>Les délais de livraison</li>
+        <li>La consommation de carburant</li>
+        <li>L’efficacité de réapprovisionnement</li>
+        <li>La planification opérationnelle</li>
+        <li>La résilience de la chaîne d’approvisionnement</li>
+        <li>La dépendance régionale</li>
+        <li>La planification d’urgence des achats</li>
+    </ul>
+
+    <h2>
+        Applications des coordonnées géographiques des fournisseurs
+    </h2>
+
+    <p>
+        Les applications des coordonnées géographiques des fournisseurs sont très nombreuses.
+    </p>
+
+    <ul>
+        <li>Visualisation des fournisseurs sur la carte</li>
+        <li>Identification des fournisseurs les plus proches</li>
+        <li>Optimisation des achats et de la logistique</li>
+        <li>Réduction des coûts de transport</li>
+        <li>Planification des itinéraires</li>
+        <li>Analyse de proximité des fournisseurs</li>
+        <li>Analyse de concentration régionale</li>
+        <li>Détection des risques logistiques</li>
+        <li>Support multi-agences</li>
+        <li>Optimisation du réapprovisionnement</li>
+        <li>Analyse des dépendances régionales</li>
+        <li>Répartition géographique des fournisseurs</li>
+        <li>Optimisation des routes</li>
+        <li>Support des équipes terrain</li>
+        <li>Coordination logistique mobile</li>
+        <li>Amélioration de la distribution</li>
+        <li>Analyse de couverture de marché</li>
+        <li>Planification d’expansion</li>
+        <li>Analyse géographique des achats</li>
+    </ul>
+
+    <h2>
+        Bases de données géographiques et intelligence d’affaires
+    </h2>
+
+    <p>
+        Le stockage des coordonnées ouvre la porte à des analyses avancées.
+    </p>
+
+    <p>
+        Les bases de données géographiques permettent de combiner données opérationnelles et analyse spatiale.
+    </p>
+
+    <p>
+        Cela permet d’analyser :
+    </p>
+
+    <ul>
+        <li>Les achats par région</li>
+        <li>Les cartes de densité fournisseurs</li>
+        <li>Les coûts liés à la distance</li>
+        <li>La performance régionale</li>
+        <li>Les dépendances logistiques</li>
+        <li>Les zones de couverture</li>
+        <li>Les goulots d’étranglement</li>
+    </ul>
+
+    <p>
+        L’analyse géographique est de plus en plus utilisée dans les systèmes modernes car elle révèle des modèles invisibles dans les rapports classiques.
+    </p>
+
+    <h2>
+        Gestion des fournisseurs au-delà des ERP classiques
+    </h2>
+
+    <p>
+        La plupart des logiciels de gestion n’intègrent pas la géographie dans la gestion des fournisseurs.
+    </p>
+
+    <p>
+        Cet ERP combine :
+    </p>
+
+    <ul>
+        <li>Bases de données fournisseurs</li>
+        <li>Systèmes d’inventaire</li>
+        <li>Cartographie</li>
+        <li>API géographiques</li>
+        <li>SQL Server</li>
+        <li>Analyse visuelle</li>
+        <li>Logistique avancée</li>
+    </ul>
+
+    <p>
+        Cela permet de comprendre les systèmes ERP modernes de manière plus avancée et réaliste.
+    </p>
+
+    <h2>
+        Importance pour la logistique et la chaîne d’approvisionnement
+    </h2>
+
+    <p>
+        La localisation des fournisseurs influence directement la performance logistique.
+    </p>
+
+    <ul>
+        <li>Retards de transport</li>
+        <li>Coûts élevés</li>
+        <li>Optimisation du carburant</li>
+        <li>Pénuries régionales</li>
+        <li>Complexité des achats</li>
+        <li>Situations d’urgence</li>
+    </ul>
+
+    <p>
+        Les coordonnées permettent des décisions plus rapides et plus intelligentes.
+    </p>
+
+    <h2>
+        Concepts ERP modernes
+    </h2>
+
+    <p>
+        Cette leçon introduit des concepts avancés :
+    </p>
+
+    <ul>
+        <li>Systèmes d’information géographique (SIG)</li>
+        <li>Bases de données spatiales</li>
+        <li>Stockage de coordonnées</li>
+        <li>API cartographiques</li>
+        <li>Business intelligence géographique</li>
+        <li>Systèmes ERP géolocalisés</li>
+        <li>Analyse spatiale</li>
+    </ul>
+
+    <h2>
+        Démonstration pratique
+    </h2>
+
+    <p>
+        Le cours Udemy inclut une démonstration complète :
+    </p>
+
+    <ul>
+        <li>Création de fournisseurs</li>
+        <li>Positionnement sur la carte</li>
+        <li>Stockage des coordonnées</li>
+        <li>Configuration de la carte</li>
+        <li>Utilisation des outils géographiques</li>
+        <li>Analyse des données fournisseurs</li>
+    </ul>
+
+    <p>
+        Le processus est expliqué étape par étape avec des exemples réels.
+    </p>
+
+    <div class="section">
+
+        <h2>
+            Continuer l’apprentissage
+        </h2>
+
+        <p>
+            Continuez à explorer le programme et les ressources ci-dessous.
+        </p>
+
+        <a href="Contenido.html" class="button">
+            Retour au programme du cours
+        </a>
+
+    </div>
+
+    <div class="section">
+        <h2>Ressources et navigation</h2>
+
+        <p>
+            Accédez aux téléchargements et ressources du cours.
+            Tout fait partie d’un <strong>écosystème gratuit</strong>.
+        </p>
+
+        <a class="button" href="https://www.dropbox.com/scl/fi/w857cfimlerq19gtxyxo9/Stocks.rar?rlkey=kn06ugzajdyi4suja1hboe92u&st=96866jmr&dl=1">
+            Télécharger le logiciel
+        </a>
+
+        <a class="button" href="Contenido.html">
+            Programme complet
+        </a>
+
+        <a class="button" href="desktop.html">
+            Images desktop
+        </a>
+
+        <a class="button" href="app.html">
+            Images mobile
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/free-tool-for-small-businesses-sales-purchases-and-stock/">
+            Cours (Anglais)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/outil-gratuit-pour-entreprises-ventes-achats-et-stocks/">
+            Cours (Français)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/strumento-gratuito-per-imprese-acquisti-vendite-magazzino/">
+            Cours (Italien)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/ferramenta-gratuita-para-empresas-compras-vendas-estoque/">
+            Cours (Portugais)
+        </a>
+
+        <a class="button button-green" href="index.html">
+            Aller à la page principale
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
