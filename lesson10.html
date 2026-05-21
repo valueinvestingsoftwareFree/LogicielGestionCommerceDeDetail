@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leçon 10. Créer des listes de prix | Stratégies de tarification, segmentation client et gestion commerciale</title>
+
+<meta name="description" content="Apprenez à créer et gérer des listes de prix professionnelles dans le système ERP. Découvrez les stratégies de tarification, la segmentation des clients, les prix de gros, la tarification régionale, les prix distributeurs, les promotions, le contrôle de rentabilité et les applications commerciales avancées.">
+
+<meta name="keywords" content="listes de prix ERP, système de tarification des stocks, prix client, listes de prix de gros, prix distributeur, stratégies de tarification ERP, tarification des ventes, niveaux de prix multiples, gestion des prix commerciaux, automatisation des prix de vente">
+
+<style>
+
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+        line-height:1.8;
+    }
+
+    .container{
+        width:90%;
+        max-width:1180px;
+        margin:40px auto;
+        background:#111827;
+        padding:50px;
+        border-radius:18px;
+        box-shadow:0 0 25px rgba(0,0,0,0.4);
+    }
+
+    h1{
+        font-size:2.4rem;
+        margin-bottom:30px;
+        color:#60a5fa;
+        line-height:1.4;
+        text-align:center;
+    }
+
+    h2{
+        color:#93c5fd;
+        margin-top:45px;
+        margin-bottom:20px;
+        font-size:1.6rem;
+    }
+
+    p{
+        font-size:1.08rem;
+        line-height:1.95;
+        color:#d1d5db;
+        margin-bottom:22px;
+    }
+
+    ul{
+        color:#d1d5db;
+        padding-left:25px;
+    }
+
+    li{
+        margin-bottom:14px;
+    }
+
+    .highlight{
+        color:#93c5fd;
+        font-weight:bold;
+    }
+
+    .intro-box{
+        background:#1e293b;
+        border-left:5px solid #60a5fa;
+        padding:25px;
+        border-radius:12px;
+        margin-bottom:35px;
+    }
+
+    .section{
+        margin-top:50px;
+        padding-top:25px;
+        border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .button{
+        display:inline-block;
+        margin:10px;
+        padding:14px 26px;
+        background:#2563eb;
+        color:white;
+        text-decoration:none;
+        border-radius:10px;
+        font-size:1rem;
+        transition:0.3s;
+    }
+
+    .button:hover{
+        background:#1d4ed8;
+        transform:translateY(-2px);
+    }
+
+    .button-green{
+        background:#059669;
+    }
+
+    .button-green:hover{
+        background:#047857;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        Leçon 10. Créer des listes de prix
+    </h1>
+
+    <div class="intro-box">
+
+        <p>
+            Dans cette leçon, vous apprendrez à créer et gérer des 
+            <span class="highlight">listes de prix</span> 
+            dans le système ERP et de gestion des stocks.
+        </p>
+
+        <p>
+            Les listes de prix sont l’un des outils commerciaux les plus puissants des logiciels modernes, car elles permettent d’organiser les stratégies de tarification entre clients, produits, canaux de vente, régions géographiques, distributeurs et scénarios commerciaux.
+        </p>
+
+        <p>
+            Un système de tarification bien conçu aide les entreprises à améliorer la cohérence opérationnelle, la rentabilité, à réduire les erreurs humaines et à créer des stratégies commerciales avancées.
+        </p>
+
+    </div>
+
+    <h2>
+        Pourquoi les listes de prix sont extrêmement importantes
+    </h2>
+
+    <p>
+        La tarification est l’un des aspects les plus sensibles et stratégiques de toute entreprise.
+    </p>
+
+    <p>
+        Même de petites incohérences peuvent affecter directement :
+    </p>
+
+    <ul>
+        <li>Les marges bénéficiaires</li>
+        <li>Les performances de vente</li>
+        <li>La satisfaction client</li>
+        <li>La compétitivité du marché</li>
+        <li>La rotation des stocks</li>
+        <li>La croissance de l’entreprise</li>
+        <li>La stabilité financière</li>
+    </ul>
+
+    <p>
+        Sans listes de prix structurées, de nombreuses entreprises dépendent de calculs manuels, de feuilles de calcul ou de décisions incohérentes.
+    </p>
+
+    <p>
+        La gestion professionnelle des listes de prix résout ces problèmes en centralisant les règles de tarification dans le système ERP.
+    </p>
+
+    <h2>
+        Qu’est-ce qu’une liste de prix ?
+    </h2>
+
+    <p>
+        Une liste de prix est une configuration structurée qui définit le coût des produits ou services selon des conditions commerciales spécifiques.
+    </p>
+
+    <p>
+        Au lieu d’avoir un prix unique, les entreprises peuvent créer plusieurs structures de prix adaptées à différentes situations.
+    </p>
+
+    <p>
+        Par exemple, un même produit peut avoir :
+    </p>
+
+    <ul>
+        <li>Prix de détail</li>
+        <li>Prix de gros</li>
+        <li>Prix distributeur</li>
+        <li>Prix VIP</li>
+        <li>Prix export</li>
+        <li>Prix promotionnel</li>
+        <li>Prix régional</li>
+        <li>Prix en ligne</li>
+        <li>Prix client entreprise</li>
+    </ul>
+
+    <p>
+        Les listes de prix permettent de gérer tous ces scénarios dans un système organisé.
+    </p>
+
+    <h2>
+        Segmentation des clients
+    </h2>
+
+    <p>
+        L’un des usages les plus importants des listes de prix est la segmentation des clients.
+    </p>
+
+    <p>
+        Différents groupes de clients nécessitent souvent différentes conditions commerciales.
+    </p>
+
+    <p>
+        Par exemple :
+    </p>
+
+    <ul>
+        <li>Clients de détail : prix standard</li>
+        <li>Clients de gros : remises sur volume</li>
+        <li>Distributeurs : tarifs spéciaux</li>
+        <li>Clients fidèles : prix préférentiels</li>
+        <li>Comptes entreprise : contrats personnalisés</li>
+    </ul>
+
+    <p>
+        Les listes de prix automatisent ces relations commerciales.
+    </p>
+
+    <h2>
+        Tarification de gros et distributeurs
+    </h2>
+
+    <p>
+        Les opérations de gros nécessitent souvent une tarification flexible.
+    </p>
+
+    <p>
+        Le système ERP peut gérer plusieurs niveaux de prix :
+    </p>
+
+    <ul>
+        <li>Vente au détail</li>
+        <li>Distribution en gros</li>
+        <li>Partenaires commerciaux</li>
+        <li>Revendeurs régionaux</li>
+    </ul>
+
+    <h2>
+        Tarification géographique
+    </h2>
+
+    <p>
+        Les listes de prix peuvent aussi être utilisées pour des stratégies régionales.
+    </p>
+
+    <p>
+        Les entreprises doivent souvent s’adapter à :
+    </p>
+
+    <ul>
+        <li>Coûts de transport</li>
+        <li>Taxes locales</li>
+        <li>Conditions du marché</li>
+        <li>Fluctuations de devises</li>
+    </ul>
+
+    <h2>
+        Promotions et prix temporaires
+    </h2>
+
+    <p>
+        Les listes de prix sont essentielles pour les campagnes promotionnelles.
+    </p>
+
+    <ul>
+        <li>Soldes saisonnières</li>
+        <li>Promotions spéciales</li>
+        <li>Liquidations</li>
+        <li>Lancements de produits</li>
+    </ul>
+
+    <h2>
+        Contrôle de rentabilité
+    </h2>
+
+    <p>
+        Le système ERP permet d’analyser :
+    </p>
+
+    <ul>
+        <li>Coûts produits</li>
+        <li>Prix de vente</li>
+        <li>Marges</li>
+        <li>Remises</li>
+    </ul>
+
+    <h2>
+        Conclusion
+    </h2>
+
+    <p>
+        Cette leçon explique comment créer et gérer des listes de prix professionnelles dans un système ERP moderne.
+    </p>
+
+    <div class="section">
+
+        <h2>
+            Continuer l’apprentissage
+        </h2>
+
+        <a href="Contenido.html" class="button">
+            Retour au programme
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
