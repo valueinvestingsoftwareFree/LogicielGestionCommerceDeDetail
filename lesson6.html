@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leçon 6. Configuration des clés API pour les cartes en arrière-plan | Intégration API gratuite pour les systèmes ERP d’entreprise</title>
+
+<meta name="description" content="Apprenez à configurer des clés API gratuites pour les cartes en arrière-plan dans le logiciel de gestion d’entreprise. Comprenez les API, les fournisseurs de cartes, les services géographiques, le positionnement des clients, la cartographie des fournisseurs et l’importance des écosystèmes API gratuits pour les ERP et les applications professionnelles.">
+
+<meta name="keywords" content="tutoriel clés API, API cartes gratuites, intégration API ERP, logiciel cartes en arrière-plan, API géographiques, API logiciels entreprise, géolocalisation clients, cartographie fournisseurs, API développeur gratuites, configuration ERP">
+
+<style>
+
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+        line-height:1.8;
+    }
+
+    .container{
+        width:90%;
+        max-width:1150px;
+        margin:40px auto;
+        background:#111827;
+        padding:50px;
+        border-radius:18px;
+        box-shadow:0 0 25px rgba(0,0,0,0.4);
+    }
+
+    h1{
+        font-size:2.3rem;
+        margin-bottom:30px;
+        color:#60a5fa;
+        line-height:1.4;
+        text-align:center;
+    }
+
+    h2{
+        color:#93c5fd;
+        margin-top:45px;
+        margin-bottom:20px;
+        font-size:1.6rem;
+    }
+
+    p{
+        font-size:1.08rem;
+        line-height:1.9;
+        color:#d1d5db;
+        margin-bottom:22px;
+    }
+
+    ul{
+        color:#d1d5db;
+        padding-left:25px;
+    }
+
+    li{
+        margin-bottom:14px;
+    }
+
+    .highlight{
+        color:#93c5fd;
+        font-weight:bold;
+    }
+
+    .intro-box{
+        background:#1e293b;
+        border-left:5px solid #60a5fa;
+        padding:25px;
+        border-radius:12px;
+        margin-bottom:35px;
+    }
+
+    .section{
+        margin-top:50px;
+        padding-top:25px;
+        border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .button{
+        display:inline-block;
+        margin:10px;
+        padding:14px 26px;
+        background:#2563eb;
+        color:white;
+        text-decoration:none;
+        border-radius:10px;
+        font-size:1rem;
+        transition:0.3s;
+    }
+
+    .button:hover{
+        background:#1d4ed8;
+        transform:translateY(-2px);
+    }
+
+    .button-green{
+        background:#059669;
+    }
+
+    .button-green:hover{
+        background:#047857;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        Leçon 6. Configuration des clés API pour les cartes en arrière-plan
+    </h1>
+
+    <div class="intro-box">
+
+        <p>
+            Dans cette leçon, vous allez apprendre à configurer les 
+            <span class="highlight">clés API nécessaires aux services de cartes en arrière-plan</span> 
+            utilisés par le système de gestion d’entreprise.
+        </p>
+
+        <p>
+            Les API permettent au logiciel de communiquer avec des services géographiques externes qui fournissent des cartes, des données de localisation, des itinéraires, des couches géographiques et des capacités de visualisation utilisées dans l’écosystème ERP.
+        </p>
+
+    </div>
+
+    <h2>
+        Qu’est-ce qu’une API ?
+    </h2>
+
+    <p>
+        API signifie 
+        <span class="highlight">Interface de Programmation d’Applications</span>.
+    </p>
+
+    <p>
+        Une API agit comme un pont de communication permettant à deux systèmes logiciels d’interagir de manière sécurisée et efficace.
+    </p>
+
+    <p>
+        En termes simples, une API permet à une application de demander des données ou des services à une plateforme externe sans avoir à recréer ces fonctionnalités.
+    </p>
+
+    <p>
+        Par exemple :
+    </p>
+
+    <ul>
+        <li>Une API de cartes fournit des cartes et des images satellite</li>
+        <li>Une API météo fournit des données climatiques</li>
+        <li>Une API de paiement gère les transactions</li>
+        <li>Une API de routage calcule les itinéraires</li>
+        <li>Une API de messagerie envoie des notifications</li>
+    </ul>
+
+    <p>
+        Les systèmes ERP modernes, applications mobiles, plateformes logistiques et outils financiers dépendent fortement des API pour étendre leurs fonctionnalités.
+    </p>
+
+    <h2>
+        Qu’est-ce qu’une clé API ?
+    </h2>
+
+    <p>
+        Une clé API est un identifiant sécurisé permettant à un service externe d’authentifier et d’autoriser une application.
+    </p>
+
+    <p>
+        Elle fonctionne comme une identité numérique contrôlant l’accès aux services du fournisseur.
+    </p>
+
+    <p>
+        Dans le cas des cartes, la clé API permet au système ERP de :
+    </p>
+
+    <ul>
+        <li>Charger des cartes géographiques</li>
+        <li>Afficher des couches visuelles</li>
+        <li>Localiser clients et fournisseurs</li>
+        <li>Afficher des coordonnées</li>
+        <li>Visualiser les emplacements</li>
+        <li>Supporter les itinéraires logistiques</li>
+        <li>Activer l’analyse géographique</li>
+    </ul>
+
+    <h2>
+        Importance des API gratuites
+    </h2>
+
+    <p>
+        Un aspect essentiel de ce cours est que les API utilisées sont basées sur des services gratuits.
+    </p>
+
+    <p>
+        Cela permet aux étudiants, développeurs et petites entreprises d’accéder à des fonctionnalités avancées sans coûts élevés.
+    </p>
+
+    <p>
+        De nombreux systèmes ERP professionnels nécessitent des licences coûteuses uniquement pour accéder aux cartes et services géographiques.
+    </p>
+
+    <p>
+        Les API gratuites permettent de :
+    </p>
+
+    <ul>
+        <li>Réduire les coûts opérationnels</li>
+        <li>Expérimenter librement les technologies géographiques</li>
+        <li>Apprendre l’intégration ERP moderne</li>
+        <li>Construire des systèmes évolutifs</li>
+        <li>Accéder à des fonctionnalités avancées sans infrastructure coûteuse</li>
+    </ul>
+
+    <h2>
+        Types d’API dans les systèmes modernes
+    </h2>
+
+    <p>
+        Les systèmes ERP utilisent de nombreux types d’API.
+    </p>
+
+    <ul>
+        <li>API de cartes</li>
+        <li>API de géolocalisation</li>
+        <li>API de routage</li>
+        <li>API de paiement</li>
+        <li>API de conversion de devises</li>
+        <li>API de synchronisation cloud</li>
+        <li>API de notifications email</li>
+        <li>API SMS</li>
+        <li>API d’authentification</li>
+        <li>API d’analytique</li>
+        <li>API d’intelligence artificielle</li>
+        <li>API d’inventaire</li>
+        <li>API REST mobile</li>
+    </ul>
+
+    <h2>
+        API géographiques et applications métier
+    </h2>
+
+    <p>
+        Les API géographiques transforment les données opérationnelles en intelligence visuelle.
+    </p>
+
+    <ul>
+        <li>Visualisation des clients sur carte</li>
+        <li>Localisation des fournisseurs</li>
+        <li>Analyse des territoires commerciaux</li>
+        <li>Optimisation des livraisons</li>
+        <li>Amélioration des itinéraires</li>
+        <li>Analyse de couverture opérationnelle</li>
+        <li>Support des opérations terrain</li>
+        <li>Planification stratégique</li>
+    </ul>
+
+    <p>
+        Ces données permettent de détecter des modèles invisibles dans les tableaux classiques.
+    </p>
+
+    <h2>
+        Ce que vous apprendrez dans cette leçon
+    </h2>
+
+    <p>
+        Dans le cours Udemy, vous apprendrez :
+    </p>
+
+    <ul>
+        <li>Créer des comptes API gratuits</li>
+        <li>Obtenir des clés API</li>
+        <li>Activer les services de cartes</li>
+        <li>Configurer les clés dans le logiciel</li>
+        <li>Résoudre les erreurs d’autorisation</li>
+        <li>Corriger les problèmes de chargement</li>
+        <li>Tester les fonctionnalités géographiques</li>
+        <li>Comprendre l’intégration API dans l’ERP</li>
+    </ul>
+
+    <h2>
+        Comprendre l’intégration logicielle moderne
+    </h2>
+
+    <p>
+        Les API sont fondamentales dans les systèmes modernes : ERP, automatisation, applications mobiles, logistique et finance.
+    </p>
+
+    <p>
+        Elles constituent la base des écosystèmes numériques actuels.
+    </p>
+
+    <p>
+        Même les petites entreprises utilisent des API pour connecter leurs systèmes.
+    </p>
+
+    <p>
+        Cette leçon explique leur importance et leur configuration pratique.
+    </p>
+
+    <div class="section">
+
+        <h2>
+            Continuer l’apprentissage
+        </h2>
+
+        <p>
+            Continuez à explorer le programme et les ressources ci-dessous.
+        </p>
+
+        <a href="Contenido.html" class="button">
+            Retour au programme du cours
+        </a>
+
+    </div>
+
+    <div class="section">
+        <h2>Ressources et navigation</h2>
+
+        <p>
+            Accédez aux téléchargements et ressources du cours.
+            Tout fait partie d’un <strong>écosystème gratuit</strong>.
+        </p>
+
+        <a class="button" href="https://www.dropbox.com/scl/fi/w857cfimlerq19gtxyxo9/Stocks.rar?rlkey=kn06ugzajdyi4suja1hboe92u&st=96866jmr&dl=1">
+            Télécharger le logiciel
+        </a>
+
+        <a class="button" href="Contenido.html">
+            Programme complet
+        </a>
+
+        <a class="button" href="desktop.html">
+            Images desktop
+        </a>
+
+        <a class="button" href="app.html">
+            Images mobile
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/free-tool-for-small-businesses-sales-purchases-and-stock/">
+            Cours (Anglais)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/outil-gratuit-pour-entreprises-ventes-achats-et-stocks/">
+            Cours (Français)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/strumento-gratuito-per-imprese-acquisti-vendite-magazzino/">
+            Cours (Italien)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/ferramenta-gratuita-para-empresas-compras-vendas-estoque/">
+            Cours (Portugais)
+        </a>
+
+        <a class="button button-green" href="index.html">
+            Aller à la page principale
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
