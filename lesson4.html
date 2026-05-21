@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leçon 4. Conception d’une hiérarchie d’inventaire : classes, catégories et produits | Cours de gestion des stocks</title>
+
+<meta name="description" content="Apprenez à concevoir une hiérarchie d’inventaire professionnelle en utilisant des classes, catégories et produits dans le logiciel gratuit de comptabilité et de gestion des stocks. Améliorez l’organisation de l’inventaire, les rapports, la scalabilité, l’analyse des stocks et l’efficacité opérationnelle.">
+
+<meta name="keywords" content="hiérarchie inventaire, système gestion stocks, catégories inventaire, organisation produits, structure ERP inventaire, organisation entrepôt, logiciel inventaire, classification produits, logiciel stock gratuit, système contrôle stock">
+
+<style>
+
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+        line-height:1.8;
+    }
+
+    .container{
+        width:90%;
+        max-width:1150px;
+        margin:40px auto;
+        background:#111827;
+        padding:50px;
+        border-radius:18px;
+        box-shadow:0 0 25px rgba(0,0,0,0.4);
+    }
+
+    h1{
+        font-size:2.3rem;
+        margin-bottom:30px;
+        color:#60a5fa;
+        line-height:1.4;
+        text-align:center;
+    }
+
+    h2{
+        color:#93c5fd;
+        margin-top:45px;
+        margin-bottom:20px;
+        font-size:1.6rem;
+    }
+
+    p{
+        font-size:1.08rem;
+        line-height:1.9;
+        color:#d1d5db;
+        margin-bottom:22px;
+    }
+
+    ul{
+        color:#d1d5db;
+        padding-left:25px;
+    }
+
+    li{
+        margin-bottom:14px;
+    }
+
+    .highlight{
+        color:#93c5fd;
+        font-weight:bold;
+    }
+
+    .intro-box{
+        background:#1e293b;
+        border-left:5px solid #60a5fa;
+        padding:25px;
+        border-radius:12px;
+        margin-bottom:35px;
+    }
+
+    .section{
+        margin-top:50px;
+        padding-top:25px;
+        border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .button{
+        display:inline-block;
+        margin:10px;
+        padding:14px 26px;
+        background:#2563eb;
+        color:white;
+        text-decoration:none;
+        border-radius:10px;
+        font-size:1rem;
+        transition:0.3s;
+    }
+
+    .button:hover{
+        background:#1d4ed8;
+        transform:translateY(-2px);
+    }
+
+    .button-green{
+        background:#059669;
+    }
+
+    .button-green:hover{
+        background:#047857;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        Leçon 4. Conception d’une hiérarchie d’inventaire : classes, catégories et produits
+    </h1>
+
+    <div class="intro-box">
+
+        <p>
+            Dans cette leçon, vous allez apprendre à construire une 
+            <span class="highlight">hiérarchie d’inventaire professionnelle</span> 
+            en utilisant les Classes, Catégories et Produits dans l’écosystème logiciel de gestion d’entreprise.
+        </p>
+
+        <p>
+            Une bonne organisation de l’inventaire est l’un des fondements les plus importants pour réussir la gestion des stocks, l’analyse comptable, le reporting des ventes, le contrôle des achats et la scalabilité à long terme de l’entreprise.
+        </p>
+
+    </div>
+
+    <h2>
+        Pourquoi la structure d’inventaire est importante
+    </h2>
+
+    <p>
+        De nombreuses entreprises commencent à gérer leurs produits sans structure claire. Avec le temps, cela provoque souvent des doublons, des erreurs de stock, des rapports incohérents et des difficultés d’analyse.
+    </p>
+
+    <p>
+        Une hiérarchie bien conçue permet d’organiser les produits de manière logique dès le départ, facilitant ainsi la croissance et la gestion de grandes quantités de données.
+    </p>
+
+    <p>
+        Une structure d’inventaire bien définie améliore :
+    </p>
+
+    <ul>
+        <li>Organisation des produits</li>
+        <li>Vitesse de recherche</li>
+        <li>Analyse et reporting des stocks</li>
+        <li>Suivi des ventes</li>
+        <li>Gestion des achats</li>
+        <li>Scalabilité de l’entreprise</li>
+        <li>Clarté opérationnelle</li>
+        <li>Organisation des départements</li>
+        <li>Précision des rapports financiers</li>
+        <li>Efficacité de maintenance des stocks</li>
+    </ul>
+
+    <h2>
+        Comprendre les Classes
+    </h2>
+
+    <p>
+        Les classes représentent le niveau le plus élevé de la hiérarchie d’inventaire. Elles servent à regrouper les grandes catégories d’activité de l’entreprise.
+    </p>
+
+    <p>
+        Par exemple :
+    </p>
+
+    <ul>
+        <li>Électronique</li>
+        <li>Produits alimentaires</li>
+        <li>Fournitures de bureau</li>
+        <li>Équipements industriels</li>
+        <li>Vêtements</li>
+        <li>Pièces automobiles</li>
+    </ul>
+
+    <p>
+        Les classes permettent de structurer de grands catalogues en sections faciles à gérer.
+    </p>
+
+    <h2>
+        Comprendre les Catégories
+    </h2>
+
+    <p>
+        Les catégories constituent le deuxième niveau de classification, à l’intérieur des classes.
+    </p>
+
+    <p>
+        Par exemple, dans la classe Électronique :
+    </p>
+
+    <ul>
+        <li>Ordinateurs portables</li>
+        <li>Écrans</li>
+        <li>Imprimantes</li>
+        <li>Réseaux</li>
+        <li>Accessoires</li>
+    </ul>
+
+    <p>
+        Les catégories facilitent l’analyse des tendances de vente et la gestion des achats par groupe de produits.
+    </p>
+
+    <h2>
+        Comprendre les Produits
+    </h2>
+
+    <p>
+        Les produits représentent le niveau final de la hiérarchie. Ce sont les articles concrets utilisés dans les opérations commerciales.
+    </p>
+
+    <p>
+        Chaque produit peut contenir des informations telles que :
+    </p>
+
+    <ul>
+        <li>Nom du produit</li>
+        <li>Code interne</li>
+        <li>Prix</li>
+        <li>Quantité en stock</li>
+        <li>Références fournisseurs</li>
+        <li>Historique de mouvement</li>
+        <li>Historique des ventes</li>
+        <li>Historique des achats</li>
+        <li>Données d’analyse des coûts</li>
+    </ul>
+
+    <p>
+        Une bonne structuration des produits réduit les erreurs et améliore la cohérence des données.
+    </p>
+
+    <h2>
+        Avantages d’une hiérarchie professionnelle
+    </h2>
+
+    <p>
+        Une entreprise organisée dispose d’un meilleur contrôle opérationnel et de rapports plus fiables.
+    </p>
+
+    <p>
+        Cela devient encore plus important lorsque :
+    </p>
+
+    <ul>
+        <li>L’entreprise grandit rapidement</li>
+        <li>Des milliers de produits sont gérés</li>
+        <li>Plusieurs utilisateurs accèdent au système</li>
+        <li>Le reporting avancé est nécessaire</li>
+        <li>Les fournisseurs sont nombreux</li>
+        <li>Les entrepôts s’agrandissent</li>
+        <li>L’analyse des données devient critique</li>
+        <li>La synchronisation mobile est utilisée</li>
+    </ul>
+
+    <p>
+        Le logiciel présenté dans ce cours a été conçu pour gérer des structures d’inventaire évolutives adaptées aux petites et grandes entreprises.
+    </p>
+
+    <h2>
+        Concepts ERP et gestion des stocks
+    </h2>
+
+    <p>
+        Cette leçon introduit des concepts utilisés dans les systèmes ERP professionnels et les solutions avancées de gestion des stocks.
+    </p>
+
+    <p>
+        Vous apprendrez comment une bonne structure d’inventaire améliore :
+    </p>
+
+    <ul>
+        <li>Intégration comptable</li>
+        <li>Valorisation des stocks</li>
+        <li>Analyse des ventes</li>
+        <li>Décisions d’achat</li>
+        <li>Prévisions financières</li>
+        <li>Organisation d’entrepôt</li>
+        <li>Business intelligence</li>
+        <li>Efficacité opérationnelle</li>
+    </ul>
+
+    <p>
+        Les prochaines leçons approfondiront ces concepts avec des exemples pratiques et des démonstrations dans le logiciel.
+    </p>
+
+    <div class="section">
+
+        <h2>
+            Continuer l’apprentissage
+        </h2>
+
+        <p>
+            Continuez à explorer le programme, les téléchargements et les ressources de formation multilingues ci-dessous.
+        </p>
+
+        <a href="Contenido.html" class="button">
+            Retour au programme du cours
+        </a>
+
+    </div>
+
+    <div class="section">
+        <h2>Ressources et navigation</h2>
+
+        <p>
+            Accédez à tous les téléchargements, supports et ressources visuelles ci-dessous.
+            Tout fait partie d’un <strong>écosystème gratuit</strong> avec assistance et amélioration continue.
+        </p>
+
+        <a class="button" href="https://www.dropbox.com/scl/fi/w857cfimlerq19gtxyxo9/Stocks.rar?rlkey=kn06ugzajdyi4suja1hboe92u&st=96866jmr&dl=1">
+            Télécharger le logiciel
+        </a>
+
+        <a class="button" href="Contenido.html">
+            Programme complet
+        </a>
+
+        <a class="button" href="desktop.html">
+            Images desktop
+        </a>
+
+        <a class="button" href="app.html">
+            Images application mobile
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/free-tool-for-small-businesses-sales-purchases-and-stock/">
+            Cours (Anglais)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/outil-gratuit-pour-entreprises-ventes-achats-et-stocks/">
+            Cours (Français)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/strumento-gratuito-per-imprese-acquisti-vendite-magazzino/">
+            Cours (Italien)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/ferramenta-gratuita-para-empresas-compras-vendas-estoque/">
+            Cours (Portugais)
+        </a>
+
+        <a class="button button-green" href="index.html">
+            Aller à la page principale
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
