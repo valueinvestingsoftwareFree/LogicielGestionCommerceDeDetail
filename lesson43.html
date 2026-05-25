@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leçon 43. Générer une sauvegarde de la base de données SQLite</title>
+
+<style>
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+    }
+
+    .wrapper{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        padding:40px 0;
+    }
+
+    .container{
+        width:90%;
+        max-width:1100px;
+        background:#111827;
+        padding:50px;
+        border-radius:18px;
+        box-shadow:0 0 25px rgba(0,0,0,0.45);
+    }
+
+    h1{
+        font-size:2.4rem;
+        margin-bottom:30px;
+        color:#60a5fa;
+        line-height:1.4;
+        text-align:center;
+    }
+
+    h2{
+        color:#93c5fd;
+        margin-top:45px;
+        margin-bottom:20px;
+        font-size:1.6rem;
+    }
+
+    p{
+        font-size:1.08rem;
+        line-height:1.9;
+        color:#d1d5db;
+        margin-bottom:22px;
+    }
+
+    .highlight{
+        color:#93c5fd;
+        font-weight:bold;
+    }
+
+    .important{
+        color:#86efac;
+        font-weight:bold;
+    }
+
+    ul{
+        margin-top:10px;
+        margin-bottom:25px;
+        padding-left:25px;
+    }
+
+    li{
+        margin-bottom:14px;
+        color:#d1d5db;
+        line-height:1.8;
+        font-size:1.04rem;
+    }
+
+    .section{
+        margin-top:40px;
+        padding-top:20px;
+        border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .buttons{
+        margin-top:35px;
+        display:flex;
+        flex-wrap:wrap;
+        gap:16px;
+    }
+
+    .button{
+        display:inline-block;
+        padding:14px 26px;
+        background:#2563eb;
+        color:white;
+        text-decoration:none;
+        border-radius:10px;
+        font-size:1rem;
+        transition:0.3s;
+    }
+
+    .button:hover{
+        background:#1d4ed8;
+        transform:translateY(-2px);
+    }
+
+    .button-green{
+        background:#16a34a;
+    }
+
+    .button-green:hover{
+        background:#15803d;
+    }
+
+    .note-box{
+        background:#0b1220;
+        border-left:5px solid #60a5fa;
+        padding:25px;
+        border-radius:12px;
+        margin-top:30px;
+        margin-bottom:30px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="container">
+
+    <h1>Leçon 43. Générer une sauvegarde de la base de données SQLite</h1>
+
+    <p>
+        Dans cette leçon, vous apprendrez comment générer des sauvegardes sécurisées de la 
+        <span class="highlight">base de données SQLite utilisée par l'application mobile Android</span>.
+    </p>
+
+    <p>
+        La génération de sauvegardes de base de données est l'une des responsabilités opérationnelles et techniques les plus importantes dans tout système d'entreprise sérieux.
+    </p>
+
+    <p>
+        La base de données SQLite de l'application mobile peut contenir des informations opérationnelles extrêmement précieuses, notamment les ventes, achats, dépenses, enregistrements d'inventaire, soldes clients, informations fournisseurs, encaissements, activités financières, catalogues de produits, opérations de tournée et données historiques de l'entreprise.
+    </p>
+
+    <div class="note-box">
+        <p>
+            Un appareil mobile peut être perdu, endommagé, volé, formaté, corrompu ou physiquement détruit à tout moment.
+        </p>
+
+        <p>
+            Sans une stratégie de sauvegarde appropriée, l'entreprise peut perdre 
+            <span class="important">des mois, voire des années d'informations opérationnelles</span>.
+        </p>
+
+        <p>
+            Cette leçon explique comment protéger la continuité de l'activité en sauvegardant en toute sécurité la base de données SQLite utilisée par l'application Android.
+        </p>
+    </div>
+
+    <div class="section">
+
+        <h2>Pourquoi les sauvegardes de bases de données SQLite sont extrêmement importantes</h2>
+
+        <p>
+            La base de données SQLite agit comme le moteur central de stockage local de l'application Android.
+        </p>
+
+        <p>
+            Chaque activité opérationnelle importante effectuée depuis l'appareil mobile peut finalement être stockée dans des tables SQLite.
+        </p>
+
+        <p>
+            Perdre la base de données peut signifier perdre :
+        </p>
+
+        <ul>
+            <li>L'historique des ventes</li>
+            <li>Les enregistrements clients</li>
+            <li>Les informations fournisseurs</li>
+            <li>Les mouvements d'inventaire</li>
+            <li>Les enregistrements de dépenses</li>
+            <li>L'historique des achats</li>
+            <li>Les encaissements et paiements</li>
+            <li>Les activités de tournée</li>
+            <li>Les statistiques de l'entreprise</li>
+            <li>Les notes opérationnelles</li>
+            <li>Les photographies et références</li>
+            <li>Les transactions hors ligne</li>
+            <li>Les calculs financiers</li>
+            <li>Les analyses historiques</li>
+        </ul>
+
+        <p>
+            Les sauvegardes ne sont pas optionnelles dans les systèmes professionnels.
+            Elles constituent un mécanisme de protection essentiel contre les catastrophes opérationnelles.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Comprendre SQLite dans l'application mobile</h2>
+
+        <p>
+            SQLite est un moteur de base de données relationnelle léger intégré directement dans les applications Android.
+        </p>
+
+        <p>
+            Contrairement aux bases de données cloud distantes, SQLite stocke les informations localement à l'intérieur même de l'appareil mobile.
+        </p>
+
+        <p>
+            Cette architecture offre des avantages majeurs :
+        </p>
+
+        <ul>
+            <li>Fonctionnement orienté hors ligne</li>
+            <li>Requêtes locales rapides</li>
+            <li>Haute performance mobile</li>
+            <li>Dépendance réduite à Internet</li>
+            <li>Fonctionnement portable de l'entreprise</li>
+            <li>Stockage local efficace</li>
+            <li>Indépendance opérationnelle</li>
+        </ul>
+
+        <p>
+            Cependant, comme la base de données existe physiquement à l'intérieur du smartphone ou de la tablette, la génération correcte de sauvegardes devient absolument essentielle.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Risques liés à l'absence de sauvegarde de la base de données mobile</h2>
+
+        <p>
+            De nombreuses entreprises sous-estiment l'importance des sauvegardes de bases de données mobiles jusqu'à ce qu'une perte de données survienne.
+        </p>
+
+        <p>
+            Les risques opérationnels réels incluent :
+        </p>
+
+        <ul>
+            <li>Vol du téléphone</li>
+            <li>Panne matérielle</li>
+            <li>Suppression accidentelle</li>
+            <li>Formatage de l'appareil</li>
+            <li>Corruption du système d'exploitation</li>
+            <li>Corruption de l'application</li>
+            <li>Dommages du stockage</li>
+            <li>Échecs de synchronisation</li>
+            <li>Erreurs opérationnelles humaines</li>
+            <li>Infections par des logiciels malveillants</li>
+            <li>Destruction physique de l'appareil</li>
+            <li>Dégâts causés par l'eau ou les chocs</li>
+        </ul>
+
+        <p>
+            Sans sauvegardes, la récupération des informations opérationnelles peut devenir impossible.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Quelles informations peuvent être préservées grâce aux sauvegardes</h2>
+
+        <p>
+            Le processus de sauvegarde peut préserver l'état opérationnel complet de l'application mobile.
+        </p>
+
+        <p>
+            Selon l'architecture de l'application, la sauvegarde SQLite peut contenir :
+        </p>
+
+        <ul>
+            <li>Des bases de données complètes de ventes</li>
+            <li>Des enregistrements d'inventaire</li>
+            <li>Des tables de dépenses</li>
+            <li>Les soldes clients</li>
+            <li>Les opérations fournisseurs</li>
+            <li>L'historique des encaissements</li>
+            <li>Les mouvements de trésorerie</li>
+            <li>Les préférences utilisateur</li>
+            <li>Les configurations de l'application</li>
+            <li>L'historique des synchronisations</li>
+            <li>Les enregistrements opérationnels hors ligne</li>
+            <li>Les données analytiques de l'entreprise</li>
+            <li>Les informations financières historiques</li>
+        </ul>
+
+        <p>
+            Cela permet aux entreprises de restaurer rapidement leurs opérations en cas de problème avec un appareil.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
