@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leçon 32. L’application mobile ne se connecte pas ? Résoudre les problèmes de délai d’attente</title>
+
+<style>
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+        min-height:100vh;
+    }
+
+    .container{
+        width:90%;
+        max-width:1100px;
+        margin:40px auto;
+        background:#111827;
+        padding:50px;
+        border-radius:18px;
+        box-shadow:0 0 25px rgba(0,0,0,0.45);
+    }
+
+    h1{
+        font-size:2.4rem;
+        margin-bottom:30px;
+        color:#60a5fa;
+        line-height:1.4;
+        text-align:center;
+    }
+
+    h2{
+        margin-top:45px;
+        margin-bottom:20px;
+        color:#93c5fd;
+        font-size:1.6rem;
+    }
+
+    p{
+        font-size:1.1rem;
+        line-height:1.9;
+        color:#d1d5db;
+        margin-bottom:22px;
+    }
+
+    ul{
+        margin-top:10px;
+        margin-bottom:25px;
+        padding-left:25px;
+    }
+
+    li{
+        font-size:1.05rem;
+        line-height:1.8;
+        color:#d1d5db;
+        margin-bottom:12px;
+    }
+
+    .highlight{
+        color:#93c5fd;
+        font-weight:bold;
+    }
+
+    .section{
+        margin-top:45px;
+        padding-top:10px;
+    }
+
+    .button{
+        display:inline-block;
+        margin:10px;
+        padding:14px 28px;
+        background:#2563eb;
+        color:white;
+        text-decoration:none;
+        border-radius:10px;
+        font-size:1rem;
+        transition:0.3s;
+    }
+
+    .button:hover{
+        background:#1d4ed8;
+        transform:translateY(-2px);
+    }
+
+    .button-green{
+        background:#059669;
+    }
+
+    .button-green:hover{
+        background:#047857;
+    }
+
+    .info-box{
+        background:#1e293b;
+        border-left:5px solid #60a5fa;
+        padding:25px;
+        border-radius:12px;
+        margin-top:30px;
+        margin-bottom:30px;
+    }
+
+    .warning-box{
+        background:#3f1d1d;
+        border-left:5px solid #ef4444;
+        padding:25px;
+        border-radius:12px;
+        margin-top:30px;
+        margin-bottom:30px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Leçon 32. L’application mobile ne se connecte pas ? Résoudre les problèmes de délai d’attente</h1>
+
+    <p>
+        Dans cette leçon, vous apprendrez à résoudre l’une des situations pratiques les plus importantes dans les applications professionnelles mobiles :
+        les <span class="highlight">problèmes de délai d’attente de connexion</span>.
+    </p>
+
+    <p>
+        Lorsqu’une application mobile se connecte à une base de données de bureau ou à un serveur professionnel local, la communication entre les appareils dépend de multiples facteurs techniques tels que la stabilité du Wi-Fi, les autorisations du pare-feu, l’accessibilité de SQL Server, les adresses IP, la configuration de l’API REST, les paramètres du routeur, la latence internet et les permissions réseau Android.
+    </p>
+
+    <p>
+        Comprendre comment diagnostiquer et résoudre les problèmes de délai d’attente est extrêmement important, car les opérations professionnelles dépendent d’une communication stable entre l’application mobile Android et le système de bureau.
+    </p>
+
+    <div class="info-box">
+
+        <p>
+            Une erreur de délai d’attente signifie normalement que l’application mobile a tenté de communiquer avec le serveur ou l’API, mais que la réponse attendue n’est pas arrivée dans le délai autorisé.
+        </p>
+
+        <p>
+            Cela ne signifie pas nécessairement que l’application est défectueuse. Dans de nombreux cas, le problème est causé par la configuration, la connectivité, des ports bloqués, des adresses IP incorrectes, des services inactifs, des réseaux Wi-Fi instables ou des paramètres API incorrects.
+        </p>
+
+    </div>
+
+    <h2>Pourquoi la stabilité de la connexion est importante dans les logiciels professionnels</h2>
+
+    <p>
+        La connectivité mobile est l’un des aspects les plus importants des systèmes professionnels modernes. Une application mobile qui se connecte correctement permet aux employés, gestionnaires, équipes commerciales, personnels d’entrepôt et administrateurs de travailler depuis différents endroits tout en maintenant des informations synchronisées avec le système de bureau.
+    </p>
+
+    <p>
+        Dans les environnements professionnels réels, les problèmes de connectivité peuvent interrompre :
+    </p>
+
+    <ul>
+        <li>Les processus d’enregistrement des ventes</li>
+        <li>Les opérations de vérification des stocks</li>
+        <li>Les consultations clients</li>
+        <li>Le suivi des fournisseurs</li>
+        <li>La création de factures mobiles</li>
+        <li>La vérification des achats</li>
+        <li>Les mises à jour des stocks</li>
+        <li>Les opérations d’analyse des dettes</li>
+        <li>Les processus de révision financière</li>
+        <li>Les activités de gestion d’entrepôt</li>
+    </ul>
+
+    <p>
+        Pour cette raison, apprendre à diagnostiquer les problèmes de délai d’attente devient une compétence technique très précieuse pour toute personne utilisant des logiciels professionnels mobiles de manière professionnelle.
+    </p>
+
+    <h2>Causes courantes des problèmes de délai d’attente</h2>
+
+    <p>
+        Dans le cours, vous apprendrez à identifier les causes les plus fréquentes des échecs de connexion mobile et des situations de délai d’attente.
+    </p>
+
+    <p>
+        Parmi les causes les plus fréquentes :
+    </p>
+
+    <ul>
+        <li>Configuration incorrecte de l’adresse IP</li>
+        <li>Service API REST non démarré</li>
+        <li>Service SQL Server désactivé</li>
+        <li>Pare-feu bloquant les requêtes entrantes</li>
+        <li>Mauvaise configuration du port API</li>
+        <li>Paramètres d’isolation du routeur</li>
+        <li>Appareil Android connecté à un réseau différent</li>
+        <li>Restrictions du fournisseur d’accès internet</li>
+        <li>Réseaux Wi-Fi lents ou instables</li>
+        <li>URLs API incorrectes</li>
+        <li>Interférence VPN</li>
+        <li>Restrictions d’optimisation de batterie mobile</li>
+        <li>Windows Defender bloquant les requêtes</li>
+        <li>API REST n’écoutant pas les connexions externes</li>
+        <li>Adresses IP locales expirées après le redémarrage du routeur</li>
+    </ul>
+
+    <h2>Importance de comprendre l’architecture du réseau local</h2>
+
+    <p>
+        L’un des concepts les plus précieux expliqués dans cette leçon est la manière dont fonctionne réellement la communication sur le réseau local.
+    </p>
+
+    <p>
+        De nombreux utilisateurs installent les applications avec succès mais ne comprennent pas complètement comment l’application Android communique avec le système de bureau via le réseau local ou la connexion internet.
+    </p>
+
+    <p>
+        Vous apprendrez des concepts tels que :
+    </p>
+
+    <ul>
+        <li>Les adresses IP locales</li>
+        <li>Les réseaux privés</li>
+        <li>Les points d’accès API REST</li>
+        <li>Les ports et canaux de communication</li>
+        <li>L’accessibilité du serveur</li>
+        <li>L’architecture requête-réponse</li>
+        <li>La latence réseau</li>
+        <li>L’accès interne vs externe</li>
+        <li>Les autorisations du pare-feu</li>
+        <li>Les règles de communication du routeur</li>
+    </ul>
+
+    <p>
+        Ces concepts sont incroyablement précieux non seulement pour ce logiciel, mais aussi pour comprendre les systèmes mobiles modernes en général.
+    </p>
+
+    <h2>Processus pratique de dépannage</h2>
+
+    <p>
+        Le cours explique une méthodologie structurée de dépannage au lieu d’approches aléatoires par essais et erreurs.
+    </p>
+
+    <p>
+        Vous apprendrez à tester chaque composant indépendamment afin d’isoler rapidement la véritable source du problème.
+    </p>
+
+    <p>
+        Par exemple, la leçon explique comment :
+    </p>
+
+    <ul>
+        <li>Vérifier si l’API REST fonctionne correctement</li>
+        <li>Confirmer que l’appareil Android peut atteindre le serveur</li>
+        <li>Tester directement les URLs API</li>
+        <li>Vérifier si les ports sont ouverts</li>
+        <li>Valider l’accessibilité de SQL Server</li>
+        <li>Identifier les blocages du pare-feu</li>
+        <li>Redémarrer les services Windows nécessaires</li>
+        <li>Examiner la segmentation réseau du routeur</li>
+        <li>Vérifier la synchronisation Wi-Fi entre les appareils</li>
+        <li>Détecter les problèmes de configuration DNS ou IP</li>
+    </ul>
+
+    <p>
+        Cette approche systématique permet d’économiser énormément de temps lors de la résolution de problèmes techniques réels.
+    </p>
+
+    <div class="warning-box">
+
+        <p>
+            De nombreux problèmes de délai d’attente sont causés par de très petites erreurs de configuration. Un seul numéro de port incorrect, une mauvaise adresse IP, une règle de pare-feu désactivée ou un service inactif peut empêcher toute l’application mobile de se connecter correctement.
+        </p>
+
+        <p>
+            La leçon aide les utilisateurs à identifier efficacement ces situations grâce à des démonstrations pratiques claires.
+        </p>
+
+    </div>
+
+    <h2>Android et la véritable mobilité professionnelle</h2>
+
+    <p>
+        Les appareils Android sont largement utilisés dans les entreprises réelles parce qu’ils sont flexibles, abordables, évolutifs et disponibles sur des milliers de modèles d’appareils dans le monde entier.
+    </p>
+
+    <p>
+        La capacité de connecter des appareils Android avec des systèmes de gestion des stocks, ventes, comptabilité et achats de bureau crée d’énormes avantages opérationnels pour les entreprises de toutes tailles.
+    </p>
+
+    <p>
+        Avec une connectivité stable, les entreprises peuvent :
+    </p>
+
+    <ul>
+        <li>Effectuer des ventes mobiles</li>
+        <li>Vérifier les stocks à distance</li>
+        <li>Consulter les soldes clients</li>
+        <li>Suivre les fournisseurs en temps réel</li>
+        <li>Enregistrer des transactions depuis les entrepôts</li>
+        <li>Synchroniser les opérations terrain</li>
+        <li>Gérer des équipes distribuées</li>
+        <li>Réduire la paperasse</li>
+        <li>Améliorer la rapidité opérationnelle</li>
+        <li>Accroître la mobilité professionnelle</li>
+    </ul>
+
+    <h2>Philosophie orientée hors ligne</h2>
+
+    <p>
+        L’un des aspects les plus solides de cet écosystème est que le logiciel est conçu autour du contrôle local et des opérations basées sur le bureau au lieu de forcer les entreprises à dépendre du cloud.
+    </p>
+
+    <p>
+        Le système fonctionne principalement depuis l’ordinateur de bureau et les appareils Android, tandis que les données restent sous le contrôle direct de l’entreprise elle-même.
+    </p>
+
+    <p>
+        Cela offre des avantages importants tels que :
+    </p>
+
+    <ul>
+        <li>Un plus grand contrôle sur les informations professionnelles</li>
+        <li>Une dépendance réduite aux abonnements cloud</li>
+        <li>La propriété locale de la base de données</li>
+        <li>Des opérations réseau locales plus rapides</li>
+        <li>Une meilleure indépendance opérationnelle</li>
+        <li>Des coûts récurrents réduits</li>
+        <li>Une gestion d’infrastructure plus flexible</li>
+    </ul>
+
+    <h2>Démonstration pratique complète</h2>
+
+    <p>
+        Dans le cours Udemy, vous trouverez une démonstration pratique complète expliquant comment résoudre les problèmes de délai d’attente et de connexion étape par étape à l’aide d’exemples réels et de scénarios réels de dépannage.
+    </p>
+
+    <p>
+        La leçon est conçue non seulement pour résoudre les problèmes immédiats, mais aussi pour aider les utilisateurs à comprendre les concepts techniques sous-jacents qui permettent à la communication professionnelle mobile de fonctionner correctement.
+    </p>
+
+    <div class="section">
+
+        <h2>Ressources et navigation</h2>
+
+        <p>
+            Accédez ci-dessous à tous les téléchargements logiciels, supports de cours, captures d’écran et ressources de gestion professionnelle.
+            Tout fait partie d’un écosystème en évolution continue axé sur des solutions professionnelles pratiques pour ordinateur de bureau et Android.
+        </p>
+
+        <a class="button" href="https://www.dropbox.com/scl/fi/w857cfimlerq19gtxyxo9/Stocks.rar?rlkey=kn06ugzajdyi4suja1hboe92u&st=96866jmr&dl=1">
+            Télécharger le logiciel
+        </a>
+
+        <a class="button" href="Contenido.html">
+            Programme complet
+        </a>
+
+        <a class="button" href="desktop.html">
+            Images du bureau
+        </a>
+
+        <a class="button" href="app.html">
+            Images de l’application mobile
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/free-tool-for-small-businesses-sales-purchases-and-stock/">
+            Cours (Anglais)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/outil-gratuit-pour-entreprises-ventes-achats-et-stocks/">
+            Cours (Français)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/strumento-gratuito-per-imprese-acquisti-vendite-magazzino/">
+            Cours (Italien)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/ferramenta-gratuita-para-empresas-compras-vendas-estoque/">
+            Cours (Portugais)
+        </a>
+
+        <a class="button button-green" href="index.html">
+            Aller à la page principale
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
