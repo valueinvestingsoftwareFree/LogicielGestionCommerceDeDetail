@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leçon 34. Importer les données de votre entreprise dans l’application</title>
+
+<style>
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+        min-height:100vh;
+    }
+
+    .container{
+        width:90%;
+        max-width:1100px;
+        margin:40px auto;
+        background:#111827;
+        padding:50px;
+        border-radius:18px;
+        box-shadow:0 0 25px rgba(0,0,0,0.45);
+    }
+
+    h1{
+        font-size:2.4rem;
+        margin-bottom:30px;
+        color:#60a5fa;
+        line-height:1.4;
+        text-align:center;
+    }
+
+    h2{
+        color:#93c5fd;
+        margin-top:45px;
+        margin-bottom:20px;
+        font-size:1.7rem;
+    }
+
+    p{
+        font-size:1.08rem;
+        line-height:1.9;
+        color:#d1d5db;
+        margin-bottom:22px;
+    }
+
+    ul{
+        color:#d1d5db;
+        line-height:1.9;
+        font-size:1.05rem;
+        padding-left:25px;
+    }
+
+    li{
+        margin-bottom:12px;
+    }
+
+    .highlight{
+        color:#93c5fd;
+        font-weight:bold;
+    }
+
+    .section{
+        margin-top:45px;
+        padding-top:15px;
+        border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .button{
+        display:inline-block;
+        margin:12px 10px 0 0;
+        padding:14px 26px;
+        background:#2563eb;
+        color:white;
+        text-decoration:none;
+        border-radius:10px;
+        font-size:1rem;
+        transition:0.3s;
+    }
+
+    .button:hover{
+        background:#1d4ed8;
+        transform:translateY(-2px);
+    }
+
+    .button-green{
+        background:#16a34a;
+    }
+
+    .button-green:hover{
+        background:#15803d;
+    }
+
+    .important{
+        background:#1e293b;
+        border-left:5px solid #60a5fa;
+        padding:25px;
+        border-radius:12px;
+        margin-top:30px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Leçon 34. Importer les données de votre entreprise dans l’application</h1>
+
+    <p>
+        Dans cette leçon, vous apprendrez comment importer vos 
+        <span class="highlight">informations professionnelles</span> 
+        existantes du système de bureau vers l’application mobile Android.
+    </p>
+
+    <p>
+        L’un des avantages les plus importants de ce système est que vos données professionnelles peuvent être utilisées à la fois sur le logiciel de bureau et sur l’application mobile Android, vous permettant d’enregistrer des opérations directement depuis des appareils mobiles tout en maintenant la synchronisation avec votre environnement professionnel principal.
+    </p>
+
+    <p>
+        L’application Android peut être utilisée pour enregistrer des 
+        <span class="highlight">dépenses, achats, ventes, paiements clients, paiements fournisseurs, encaissements, mouvements de stock, mises à jour d’inventaire, visites d’itinéraires, opérations terrain et transactions professionnelles</span> 
+        depuis n’importe quel endroit.
+    </p>
+
+    <p>
+        Cela crée une énorme flexibilité pour les entreprises opérant en dehors du bureau, y compris les équipes commerciales itinérantes, les opérations de livraison, les techniciens terrain, les vendeurs mobiles, les entrepôts, les distributeurs, les commerces de détail, les restaurants, les prestataires de services et de nombreux autres modèles économiques.
+    </p>
+
+    <div class="important">
+
+        <p>
+            Un aspect très important de ce système est que le logiciel est conçu autour d’une 
+            <span class="highlight">architecture locale orientée bureau et base de données locale</span>.
+        </p>
+
+        <p>
+            Vos informations restent sous votre contrôle. L’application ne dépend pas d’abonnements cloud coûteux ni de plateformes hébergées externes pour fonctionner. La base de données est stockée et gérée directement par l’entreprise à l’aide de Microsoft SQL Server dans l’environnement de bureau.
+        </p>
+
+        <p>
+            L’application Android communique avec votre propre environnement et vous permet d’étendre les opérations professionnelles vers des appareils mobiles sans abandonner la propriété de vos informations.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Copier l’application Android à l’aide d’un câble USB</h2>
+
+        <p>
+            L’une des méthodes les plus simples et les plus fiables pour installer l’application Android consiste à utiliser une connexion standard par 
+            <span class="highlight">câble USB</span> 
+            entre l’ordinateur de bureau et l’appareil Android.
+        </p>
+
+        <p>
+            Cette méthode est extrêmement importante car elle ne nécessite pas de téléchargements cloud, de magasins d’applications, de services de synchronisation externes ni de systèmes de déploiement compliqués.
+        </p>
+
+        <p>
+            Dans le cours, vous apprendrez étape par étape comment :
+        </p>
+
+        <ul>
+            <li>Télécharger le package de l’application Android.</li>
+            <li>Connecter le téléphone ou la tablette Android à l’ordinateur de bureau à l’aide d’un câble USB.</li>
+            <li>Activer le mode de transfert de fichiers sur les appareils Android.</li>
+            <li>Copier directement le fichier d’installation APK dans l’appareil mobile.</li>
+            <li>Localiser le fichier dans le stockage Android.</li>
+            <li>Installer l’application manuellement.</li>
+            <li>Accorder en toute sécurité les autorisations d’installation requises.</li>
+            <li>Lancer l’application mobile pour la première fois.</li>
+            <li>Configurer la connexion avec l’environnement professionnel.</li>
+        </ul>
+
+        <p>
+            Cette méthode d’installation est particulièrement précieuse pour les entreprises qui préfèrent garder un contrôle direct sur leurs applications, souhaitent éviter de publier leurs logiciels publiquement ou doivent déployer des applications en interne sur plusieurs appareils de l’entreprise.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Pourquoi l’installation via USB est importante</h2>
+
+        <p>
+            Installer l’application Android manuellement via USB offre plusieurs avantages majeurs pour les entreprises et les développeurs.
+        </p>
+
+        <ul>
+            <li>Installation rapide sans dépendance à Internet.</li>
+            <li>Déploiement direct sur les appareils appartenant à l’entreprise.</li>
+            <li>Aucune dépendance aux boutiques d’applications externes.</li>
+            <li>Meilleure confidentialité et meilleur contrôle opérationnel.</li>
+            <li>Mises à jour et maintenance simplifiées.</li>
+            <li>Utile pour les applications professionnelles internes.</li>
+            <li>Idéal pour les entrepôts, usines, commerces de détail et opérations terrain.</li>
+            <li>Déploiement simple pour plusieurs employés.</li>
+            <li>Complexité d’infrastructure réduite.</li>
+            <li>Utile dans les régions disposant de connexions Internet instables.</li>
+        </ul>
+
+        <p>
+            De nombreuses entreprises dans le monde utilisent des méthodes de déploiement direct APK pour leurs logiciels opérationnels, car elles offrent flexibilité, indépendance et gestion plus simple des outils internes de l’entreprise.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Utiliser l’application Android pour des opérations professionnelles réelles</h2>
+
+        <p>
+            Une fois l’application mobile installée, l’appareil Android devient une puissante extension opérationnelle du système professionnel.
+        </p>
+
+        <p>
+            Les employés et les propriétaires d’entreprise peuvent transporter les opérations professionnelles directement dans leur poche à l’aide de téléphones ou tablettes tout en interagissant en temps réel avec les clients, fournisseurs, inventaires et opérations terrain.
+        </p>
+
+        <p>
+            Quelques exemples d’applications professionnelles réelles incluent :
+        </p>
+
+        <ul>
+            <li>Des représentants commerciaux enregistrant les commandes clients pendant les visites.</li>
+            <li>Des employés terrain enregistrant immédiatement les dépenses.</li>
+            <li>Des opérateurs d’entrepôt vérifiant la disponibilité des stocks.</li>
+            <li>Des chauffeurs-livreurs confirmant les paiements et encaissements.</li>
+            <li>Le personnel des magasins enregistrant les achats auprès des fournisseurs.</li>
+            <li>Des propriétaires d’entreprise examinant l’activité opérationnelle à distance.</li>
+            <li>Des techniciens créant des enregistrements de dépenses liés aux services.</li>
+            <li>Des vendeurs itinérants gérant les ventes pendant leurs déplacements.</li>
+            <li>Des équipes mobiles collectant les signatures et confirmations des clients.</li>
+            <li>Le comptage des stocks et la vérification d’inventaire directement depuis des appareils mobiles.</li>
+        </ul>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Pourquoi les opérations mobiles sont importantes</h2>
+
+        <p>
+            Les opérations mobiles améliorent considérablement la rapidité et la précision des informations professionnelles.
+        </p>
+
+        <p>
+            Au lieu d’attendre le retour au bureau pour saisir manuellement les transactions, les informations peuvent être enregistrées immédiatement pendant que les opérations se déroulent.
+        </p>
+
+        <p>
+            Cela réduit les transactions oubliées, minimise les erreurs humaines, améliore la visibilité opérationnelle et aide les entreprises à maintenir continuellement des informations financières et d’inventaire à jour.
+        </p>
+
+        <p>
+            Les entreprises qui intègrent des flux opérationnels mobiles obtiennent souvent des avantages majeurs dans :
+        </p>
+
+        <ul>
+            <li>L’efficacité opérationnelle.</li>
+            <li>L’enregistrement plus rapide des transactions.</li>
+            <li>L’amélioration de la précision des stocks.</li>
+            <li>Un meilleur service client.</li>
+            <li>Une visibilité opérationnelle en temps réel.</li>
+            <li>La coordination des équipes terrain.</li>
+            <li>La réduction de la paperasse.</li>
+            <li>Un meilleur contrôle financier.</li>
+            <li>L’amélioration des opérations de livraison.</li>
+            <li>Une prise de décision plus rapide.</li>
+        </ul>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Objectifs pédagogiques de cette leçon</h2>
+
+        <p>
+            À la fin de cette leçon, vous comprendrez comment transférer l’application Android vers des appareils mobiles en toute sécurité, comment l’installer manuellement à l’aide de connexions USB et comment commencer à intégrer vos opérations professionnelles réelles dans l’environnement mobile.
+        </p>
+
+        <p>
+            Le cours Udemy comprend une démonstration pratique complète couvrant tout le processus, depuis la préparation du bureau jusqu’à l’installation Android et l’utilisation opérationnelle.
+        </p>
+
+    </div>
+
+    <div class="section">
+        <h2>Ressources et navigation</h2>
+
+        <p>
+            Accédez ci-dessous à tous les téléchargements logiciels, supports de cours, captures d’écran et ressources pédagogiques.
+            Tout fait partie d’un 
+            <span class="highlight">écosystème gratuit</span> 
+            avec assistance gratuite et amélioration continue basée sur les retours d’utilisateurs et d’entreprises réels.
+        </p>
+
+        <a class="button" href="https://www.dropbox.com/scl/fi/w857cfimlerq19gtxyxo9/Stocks.rar?rlkey=kn06ugzajdyi4suja1hboe92u&st=96866jmr&dl=1">
+            Télécharger le logiciel
+        </a>
+
+        <a class="button" href="Contenido.html">
+            Programme complet
+        </a>
+
+        <a class="button" href="desktop.html">
+            Images du bureau
+        </a>
+
+        <a class="button" href="app.html">
+            Images de l’application mobile
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/free-tool-for-small-businesses-sales-purchases-and-stock/">
+            Cours (Anglais)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/outil-gratuit-pour-entreprises-ventes-achats-et-stocks/">
+            Cours (Français)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/strumento-gratuito-per-imprese-acquisti-vendite-magazzino/">
+            Cours (Italien)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/ferramenta-gratuita-para-empresas-compras-vendas-estoque/">
+            Cours (Portugais)
+        </a>
+
+        <a class="button button-green" href="index.html">
+            Aller à la page principale
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
