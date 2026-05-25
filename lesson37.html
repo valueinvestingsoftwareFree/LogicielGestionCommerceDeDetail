@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leçon 37. Enregistrer des Achats dans l’Application Mobile</title>
+
+<style>
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+        min-height:100vh;
+    }
+
+    .container{
+        width:90%;
+        max-width:1200px;
+        margin:40px auto;
+        background:#111827;
+        padding:50px;
+        border-radius:20px;
+        box-shadow:0 0 30px rgba(0,0,0,0.45);
+    }
+
+    h1{
+        font-size:2.5rem;
+        margin-bottom:30px;
+        color:#60a5fa;
+        line-height:1.4;
+        text-align:center;
+    }
+
+    h2{
+        color:#93c5fd;
+        margin-top:45px;
+        margin-bottom:20px;
+        font-size:1.6rem;
+    }
+
+    p{
+        font-size:1.1rem;
+        line-height:1.9;
+        color:#d1d5db;
+        margin-bottom:22px;
+    }
+
+    ul{
+        color:#d1d5db;
+        line-height:1.9;
+        font-size:1.05rem;
+        padding-left:25px;
+    }
+
+    li{
+        margin-bottom:12px;
+    }
+
+    .highlight{
+        color:#93c5fd;
+        font-weight:bold;
+    }
+
+    .section{
+        margin-top:45px;
+        padding-top:10px;
+    }
+
+    .button{
+        display:inline-block;
+        margin:12px 10px 0 0;
+        padding:14px 28px;
+        background:#2563eb;
+        color:white;
+        text-decoration:none;
+        border-radius:10px;
+        font-size:1rem;
+        transition:0.3s;
+    }
+
+    .button:hover{
+        background:#1d4ed8;
+        transform:translateY(-2px);
+    }
+
+    .button-green{
+        background:#059669;
+    }
+
+    .button-green:hover{
+        background:#047857;
+    }
+
+    .note{
+        background:#0b1220;
+        border-left:5px solid #60a5fa;
+        padding:25px;
+        border-radius:12px;
+        margin-top:30px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Leçon 37. Enregistrer des Achats dans l’Application Mobile</h1>
+
+    <p>
+        Dans cette leçon, vous apprendrez à enregistrer des 
+        <span class="highlight">achats directement depuis l’application mobile Android</span>, 
+        permettant à votre entreprise d’enregistrer immédiatement les transactions fournisseurs depuis le terrain, un entrepôt, un magasin, un centre de distribution, les installations des fournisseurs ou tout autre lieu opérationnel distant.
+    </p>
+
+    <p>
+        L’un des plus grands avantages des achats mobiles est la capacité de capturer les informations 
+        <span class="highlight">au moment exact où la transaction se produit</span>. 
+        Au lieu d’écrire des notes sur papier puis de tout ressaisir manuellement plus tard dans le système de bureau, l’achat peut être enregistré instantanément depuis l’appareil Android, réduisant les délais, améliorant la précision et évitant les transactions oubliées.
+    </p>
+
+    <p>
+        Cette fonctionnalité est extrêmement précieuse pour les entreprises qui déplacent constamment des stocks, travaillent avec des fournisseurs externes, reçoivent des marchandises en dehors du bureau, achètent des produits auprès de multiples vendeurs au cours de la journée ou opèrent dans des entrepôts, sur des tournées, dans des usines, des chantiers de construction, des exploitations agricoles ou des environnements de vente au détail.
+    </p>
+
+    <div class="section">
+
+        <h2>Pourquoi l’Enregistrement Mobile des Achats est si Important</h2>
+
+        <p>
+            Les méthodes traditionnelles d’enregistrement des achats créent souvent des problèmes opérationnels. Les employés peuvent oublier des quantités, perdre des factures, se souvenir incorrectement des prix ou retarder les mises à jour d’inventaire jusqu’à leur retour au bureau. Ces retards peuvent entraîner des niveaux de stock inexacts, de mauvaises décisions d’achat, des incohérences comptables et une confusion dans les flux de trésorerie.
+        </p>
+
+        <p>
+            En enregistrant les achats directement depuis l’application Android, les informations entrent immédiatement dans le système de gestion de l’entreprise. Cela signifie que les niveaux de stock, les soldes fournisseurs, les coûts des produits et l’historique des achats peuvent rester continuellement mis à jour presque en temps réel.
+        </p>
+
+        <p>
+            La possibilité de travailler directement depuis un appareil mobile aide également les entreprises à fonctionner plus rapidement et plus professionnellement. Un acheteur peut se tenir directement à côté du fournisseur, vérifier physiquement les produits, confirmer visuellement les quantités, examiner immédiatement les prix et enregistrer toute l’opération sans retourner au bureau.
+        </p>
+
+        <p>
+            L’enregistrement mobile des achats est particulièrement utile pour :
+        </p>
+
+        <ul>
+            <li>Les magasins de détail achetant des stocks auprès de distributeurs.</li>
+            <li>Les commerciaux achetant des produits pendant leurs déplacements.</li>
+            <li>Les restaurants recevant quotidiennement des fournitures alimentaires.</li>
+            <li>Les entreprises de construction achetant des matériaux sur site.</li>
+            <li>Les entreprises agricoles acquérant des fournitures dans des zones éloignées.</li>
+            <li>Les entrepôts recevant des marchandises depuis des camions.</li>
+            <li>Les techniciens de terrain achetant des pièces de rechange.</li>
+            <li>Les sociétés d’importation et de distribution gérant les mouvements d’inventaire.</li>
+            <li>Les entreprises opérant sur plusieurs sites.</li>
+        </ul>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Mises à Jour de Stock en Temps Réel</h2>
+
+        <p>
+            Chaque achat enregistré depuis l’application mobile peut immédiatement affecter les quantités de stock dans le système de l’entreprise. Cela est extrêmement important car la précision de l’inventaire impacte presque tous les domaines des opérations commerciales.
+        </p>
+
+        <p>
+            Des informations de stock précises aident les entreprises à :
+        </p>
+
+        <ul>
+            <li>Connaître la disponibilité actuelle des produits.</li>
+            <li>Éviter la survente de produits.</li>
+            <li>Prévenir les ruptures de stock.</li>
+            <li>Identifier rapidement les faibles niveaux de stock.</li>
+            <li>Calculer plus précisément les points de réapprovisionnement.</li>
+            <li>Améliorer la planification des achats.</li>
+            <li>Réduire les achats d’urgence.</li>
+            <li>Augmenter l’efficacité opérationnelle.</li>
+            <li>Améliorer le service client.</li>
+        </ul>
+
+        <p>
+            Comme les achats peuvent être enregistrés immédiatement depuis les appareils Android, les informations d’inventaire deviennent beaucoup plus dynamiques et fiables par rapport aux systèmes manuels retardés.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Coûts d’Achat et Contrôle Financier</h2>
+
+        <p>
+            Enregistrer des achats depuis l’application mobile n’est pas seulement utile pour le contrôle des stocks. C’est également essentiel pour l’analyse financière et la gestion des coûts.
+        </p>
+
+        <p>
+            Chaque transaction d’achat stocke des informations opérationnelles et financières précieuses, notamment :
+        </p>
+
+        <ul>
+            <li>Détails du fournisseur.</li>
+            <li>Date et heure de l’achat.</li>
+            <li>Quantités de produits.</li>
+            <li>Coûts d’achat.</li>
+            <li>Valeur totale de la transaction.</li>
+            <li>Informations historiques sur les prix.</li>
+            <li>Méthodes de paiement.</li>
+            <li>Historique des activités utilisateur.</li>
+            <li>Historique des mouvements de stock.</li>
+        </ul>
+
+        <p>
+            Ces informations deviennent extrêmement précieuses pour les analyses ultérieures. Les entreprises peuvent identifier quels fournisseurs offrent les meilleurs prix, quels produits deviennent plus coûteux avec le temps, comment les coûts d’achat affectent la rentabilité et comment les investissements en inventaire évoluent mois après mois.
+        </p>
+
+        <p>
+            Des enregistrements d’achats précis améliorent également la cohérence comptable, les rapports financiers, le suivi des dépenses et la transparence opérationnelle.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Travailler Directement sur le Site du Fournisseur</h2>
+
+        <p>
+            L’un des plus grands avantages de l’application mobile Android est la mobilité elle-même. Les achats peuvent être enregistrés directement depuis l’entrepôt, le magasin, l’usine, le bureau ou le centre de distribution du fournisseur.
+        </p>
+
+        <p>
+            Cela permet à l’employé ou au propriétaire de l’entreprise de :
+        </p>
+
+        <ul>
+            <li>Comparer physiquement les produits.</li>
+            <li>Vérifier immédiatement la qualité des produits.</li>
+            <li>Contrôler les conditions d’emballage.</li>
+            <li>Confirmer visuellement les quantités reçues.</li>
+            <li>Valider instantanément les factures.</li>
+            <li>Corriger les erreurs de prix avant de quitter le fournisseur.</li>
+            <li>Mettre à jour le système sans attendre.</li>
+            <li>Réduire les erreurs de transcription.</li>
+            <li>Améliorer la rapidité opérationnelle.</li>
+        </ul>
+
+        <p>
+            Ce flux de travail mobile crée un processus d’achat beaucoup plus moderne et efficace comparé aux méthodes papier ou aux systèmes limités au bureau.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Avantages du Mode Hors Ligne et de l’Approche Locale</h2>
+
+        <p>
+            L’écosystème logiciel utilisé dans ce cours suit une 
+            <span class="highlight">philosophie orientée local</span>. 
+            Le système de bureau fonctionne sur l’infrastructure propre de l’utilisateur, et l’application Android communique avec l’environnement de l’entreprise sans dépendre d’abonnements cloud coûteux.
+        </p>
+
+        <p>
+            Cette approche offre des avantages importants :
+        </p>
+
+        <ul>
+            <li>Un meilleur contrôle des informations de l’entreprise.</li>
+            <li>Une réduction des coûts récurrents.</li>
+            <li>Aucune dépendance aux abonnements SaaS coûteux.</li>
+            <li>Une meilleure confidentialité des données opérationnelles.</li>
+            <li>La propriété directe des bases de données de l’entreprise.</li>
+            <li>Une grande flexibilité de personnalisation.</li>
+            <li>Une évolutivité professionnelle pour l’entreprise.</li>
+        </ul>
+
+        <p>
+            De nombreuses petites et moyennes entreprises préfèrent cette architecture car elle leur permet de conserver leur indépendance opérationnelle tout en bénéficiant des technologies mobiles modernes.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Synchronisation Entre le Bureau et le Mobile</h2>
+
+        <p>
+            Les achats enregistrés dans l’application Android font partie du même écosystème opérationnel utilisé par le logiciel de bureau. Cela signifie que les informations enregistrées depuis l’appareil mobile peuvent ensuite être consultées, analysées, corrigées, rapportées et auditées depuis l’environnement de bureau.
+        </p>
+
+        <p>
+            Cette intégration permet aux entreprises de combiner :
+        </p>
+
+        <ul>
+            <li>La flexibilité opérationnelle mobile.</li>
+            <li>La puissance analytique du bureau.</li>
+            <li>La gestion centralisée des stocks.</li>
+            <li>Des bases de données fournisseurs unifiées.</li>
+            <li>Des systèmes de reporting intégrés.</li>
+            <li>L’analyse historique des achats.</li>
+            <li>Le suivi financier avancé.</li>
+        </ul>
+
+        <p>
+            Le résultat est un système d’entreprise hybride capable de fonctionner efficacement à l’intérieur comme à l’extérieur du bureau.
+        </p>
+
+    </div>
+
+    <div class="note">
+
+        <p>
+            Dans le cours Udemy, vous apprendrez étape par étape comment créer des documents d’achat depuis l’application Android, sélectionner des fournisseurs, ajouter des produits, définir des quantités, enregistrer des coûts, synchroniser les informations avec l’environnement de bureau et gérer les flux de travail d’achats mobiles à l’aide d’exemples pratiques issus du monde réel.
+        </p>
+
+    </div>
+
+    <div class="section">
+        <h2>Ressources et Navigation</h2>
+
+        <p>
+            Accédez ci-dessous à tous les téléchargements logiciels, supports de cours et ressources visuelles.
+            Tout fait partie d’un <strong>écosystème gratuit</strong> avec support gratuit et amélioration continue basée sur les retours des utilisateurs.
+        </p>
+
+        <a class="button" href="https://www.dropbox.com/scl/fi/w857cfimlerq19gtxyxo9/Stocks.rar?rlkey=kn06ugzajdyi4suja1hboe92u&st=96866jmr&dl=1">
+            Télécharger le Logiciel
+        </a>
+
+        <a class="button" href="Contenido.html">
+            Programme Complet
+        </a>
+
+        <a class="button" href="desktop.html">
+            Images du Bureau
+        </a>
+
+        <a class="button" href="app.html">
+            Images de l’Application Mobile
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/free-tool-for-small-businesses-sales-purchases-and-stock/">
+            Cours (Anglais)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/outil-gratuit-pour-entreprises-ventes-achats-et-stocks/">
+            Cours (Français)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/strumento-gratuito-per-imprese-acquisti-vendite-magazzino/">
+            Cours (Italien)
+        </a>
+
+        <a class="button" href="https://www.udemy.com/course/ferramenta-gratuita-para-empresas-compras-vendas-estoque/">
+            Cours (Portugais)
+        </a>
+
+        <a class="button button-green" href="index.html">
+            Aller à la Page Principale
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
